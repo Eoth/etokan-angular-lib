@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "etokan-lib": {
+      "projectType": "library",
+      "root": "projects/etokan-lib",
+      "sourceRoot": "projects/etokan-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/etokan-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/etokan-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/etokan-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/etokan-lib/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "e775f2c7-4cbb-42a5-979c-cd8b8f3b29d5"
   }
 }
