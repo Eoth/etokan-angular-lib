@@ -6,7 +6,26 @@
     "@angular/core": "^15.2.0"
   },
   "dependencies": {
+    "d3": "^7.8.4",
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eoth/etokan-angular-lib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eoth/etokan-angular-lib/issues"
+  },
+  "homepage": "https://github.com/Eoth/etokan-angular-lib#readme",
+  "devDependencies": {
+    "@types/d3": "^7.4.0"
+  }
 }
