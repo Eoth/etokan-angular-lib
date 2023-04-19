@@ -17,11 +17,6 @@ export namespace ObjectU {
         return value !== undefined && value !== null;
     }
 
-    //@ts-ignore
-    export function allExist(...values: unknown[]): values is NonNullable<unknown[]> {
-        return values.every(exist);
-    }
-
     /**
      * Return primary if exist other else
      * very useful to retrieve the value of a boolean for example
