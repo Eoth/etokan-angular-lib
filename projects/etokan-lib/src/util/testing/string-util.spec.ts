@@ -1,4 +1,4 @@
-import { StringJoiner, StringU } from "./string-util";
+import { StringU, StringJoiner } from "../string-util";
 
 describe('StringU', () => {
 

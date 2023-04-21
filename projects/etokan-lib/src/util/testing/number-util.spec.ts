@@ -1,5 +1,4 @@
-import { NumberU } from "./number-util";
-
+import { NumberU } from "../number-util";
 
 describe('NumberU', () => {
 

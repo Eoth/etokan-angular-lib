@@ -1,7 +1,11 @@
-import { ObjectU } from "./object-util";
 
 export const EMPTY = '';
-export namespace StringU {
+
+function isBlank(s1: string): boolean {
+    return s1.trim() === EMPTY;
+}
+
+export class StringU {
 
     /**
      * Check 2 values are sames
@@ -10,7 +14,7 @@ export namespace StringU {
      * @param s2 second value to check
      * @returns true if same
      */
-    export function isEquals(s1: string, s2: string): boolean {
+    static isEquals(s1: string, s2: string): boolean {
         return s1.trim() === s2.trim();
     }
 
@@ -20,8 +24,8 @@ export namespace StringU {
      * @param s string to check
      * @returns true if is blank
      */
-    export function isBlank(s: string): boolean {
-        return isEquals(s, EMPTY);
+    static isBlank(s: string): boolean {
+        return isBlank(s);
     }
 
     /**
@@ -30,7 +34,7 @@ export namespace StringU {
      * @param s string to check
      * @returns true if is not blank
      */
-    export function isNotBlank(s: string): boolean {
+    static isNotBlank(s: string): boolean {
         return !isBlank(s);
     }
 }

@@ -1,4 +1,5 @@
-import { DateU, Interval } from "./date-util";
+import { DateU, Interval } from "../date-util";
+
 
 describe('DateU', () => {
     it('diff YEARS', () => {

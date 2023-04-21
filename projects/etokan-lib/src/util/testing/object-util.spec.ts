@@ -1,4 +1,4 @@
-import { ObjectU } from "./object-util";
+import { ObjectU } from "../object-util";
 
 interface Goat {
     achraf: string;

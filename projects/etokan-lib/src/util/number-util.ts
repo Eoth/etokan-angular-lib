@@ -2,7 +2,7 @@ const numberRegExp = /^(\d+|\d+[,.]|[,.]\d+|\d+[,.]\d+)$/
 /**
  * Space to number Util
  */
-export namespace NumberU {
+export class NumberU {
 
     /**
      * Check String is number format
@@ -10,7 +10,7 @@ export namespace NumberU {
      * @param value 
      * @returns 
      */
-    export function isNumber(value: string): boolean {
+    static isNumber(value: string): boolean {
         return numberRegExp.test(value);
     }
 
@@ -20,7 +20,7 @@ export namespace NumberU {
      * @param value 
      * @returns 
      */
-    export function toNumber(value: string): number {
+    static toNumber(value: string): number {
         return Number(value.replace(',', '.'));
     }
 

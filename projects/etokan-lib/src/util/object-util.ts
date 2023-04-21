@@ -1,11 +1,11 @@
-import { Predicate } from "@angular/core";
-
-type Exist<T> = (value: T | undefined) => value is NonNullable<T>;
+function exist<T>(value: T | undefined): value is T {
+    return value !== undefined && value !== null;
+}
 
 /**
  * Space to Object Util
  */
-export namespace ObjectU {
+export class ObjectU {
 
     /**
      * Check If value is not null or not undefined
@@ -13,8 +13,8 @@ export namespace ObjectU {
      * @param value to check
      * @returns true if exist
      */
-    export function exist<T>(value: T | undefined): value is T {
-        return value !== undefined && value !== null;
+    static exist<T>(value: T | undefined): value is T {
+        return exist(value);
     }
 
     /**
@@ -27,7 +27,7 @@ export namespace ObjectU {
      * @param other 
      * @returns 
      */
-    export function orElse<T>(primary: T | undefined, other: T): T {
+    static orElse<T>(primary: T | undefined, other: T): T {
         return exist(primary) ? primary : other;
     }
 
@@ -37,7 +37,7 @@ export namespace ObjectU {
      * @param value 
      * @returns 
      */
-    export function oppositeIfExist(value: boolean | undefined): boolean | undefined {
+    static oppositeIfExist(value: boolean | undefined): boolean | undefined {
         return exist(value) ? !value : value;
     }
 
@@ -48,7 +48,7 @@ export namespace ObjectU {
      * @param fieldName 
      * @returns 
      */
-    export function getValueOn<T extends Object>(object: T, fieldName: string): any {
+    static getValueOn<T extends Object>(object: T, fieldName: string): any {
         //@ts-ignore
         return object[fieldName];
     }

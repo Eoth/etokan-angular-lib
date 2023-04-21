@@ -1,10 +1,9 @@
-import { ObjectU } from "./object-util";
 
 export enum Interval {
     YEARS, MONTHS, WEEKS, DAYS, HOURS, MINUTES, SECONDS
 }
 
-export namespace DateU {
+export class DateU {
 
     /**
      * Difference between 2 dates&
@@ -14,7 +13,7 @@ export namespace DateU {
      * @param interval 
      * @returns 
      */
-    export function diff(date1: Date, date2: Date, interval: Interval): number | undefined {
+    static diff(date1: Date, date2: Date, interval: Interval): number | undefined {
         return intervalDiffFunctionMap.get(interval)?.(date2, date1);
     }
 
@@ -25,7 +24,7 @@ export namespace DateU {
      * @param interval 
      * @returns 
      */
-    export function add(date: Date, nb: number, interval: Interval): Date | undefined {
+    static add(date: Date, nb: number, interval: Interval): Date | undefined {
         return intervalAddFunctionMap.get(interval)?.(date, nb);
     }
 
